@@ -12,16 +12,16 @@ public class BoardRender {
 
     public void render(Board board) {
         for (int rank = 8; rank >= 1; rank--) {
-            String line = "";
+            StringBuilder line = new StringBuilder();
             for (Column column : Column.values()) {
                 Coordinates coordinates = new Coordinates(column, rank);
                 if (board.isSquareEmpty(coordinates)) {
-                    line += getSpriteForEmptySquare(coordinates);
+                    line.append(getSpriteForEmptySquare(coordinates));
                 } else {
-                    line += getPieceSprite(board.getPiece(coordinates));
+                    line.append(getPieceSprite(board.getPiece(coordinates)));
                 }
             }
-            line += ANSI_RESET;
+            line.append(ANSI_RESET);
             System.out.println(line);
         }
     }
@@ -48,21 +48,15 @@ public class BoardRender {
     }
 
     private String selectUnicodeSpriteForPiece(Piece piece) {
-        switch (piece.getClass().getSimpleName()) {
-            case "Pawn":
-                return "P";
-            case "Knight":
-                return "K";
-            case "Bishop":
-                return "B";
-            case "Rook":
-                return "R";
-            case "Queen":
-                return "Q";
-            case "King":
-                return "#";
-        }
-        return "";
+        return switch (piece.getClass().getSimpleName()) {
+            case "Pawn" -> "p";
+            case "Knight" -> "k";
+            case "Bishop" -> "s";
+            case "Rook" -> "l";
+            case "Queen" -> "q";
+            case "King" -> "#";
+            default -> "";
+        };
     }
 
     private String getPieceSprite(Piece piece) {

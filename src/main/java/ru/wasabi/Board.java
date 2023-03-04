@@ -66,6 +66,6 @@ public class Board {
     }
 
     public static boolean isSquareDark(Coordinates coordinates) {
-        return (((coordinates.column.ordinal() + 1) + coordinates.row) % 2) == 0;
+        return (((coordinates.column().ordinal() + 1) + coordinates.row()) % 2) == 0;
     }
 }
