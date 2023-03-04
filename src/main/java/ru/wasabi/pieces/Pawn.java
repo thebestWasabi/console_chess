@@ -1,13 +1,13 @@
-package ru.wasabi.model;
+package ru.wasabi.pieces;
 
 import ru.wasabi.Color;
 import ru.wasabi.Coordinates;
 
 import java.util.Set;
 
-public class Queen extends Piece {
+public class Pawn extends Piece {
 
-    public Queen(Color color, Coordinates coordinates) {
+    public Pawn(Color color, Coordinates coordinates) {
         super(color, coordinates);
     }
 

@@ -1,4 +1,4 @@
-package ru.wasabi.model;
+package ru.wasabi.pieces;
 
 import ru.wasabi.Color;
 import ru.wasabi.Coordinates;

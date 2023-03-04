@@ -1,4 +1,4 @@
-package ru.wasabi.model;
+package ru.wasabi.pieces;
 
 public class CoordinateShift {
 

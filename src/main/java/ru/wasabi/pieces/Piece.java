@@ -1,4 +1,4 @@
-package ru.wasabi.model;
+package ru.wasabi.pieces;
 
 import ru.wasabi.Board;
 import ru.wasabi.Color;
@@ -22,7 +22,6 @@ public abstract class Piece {
         for (CoordinateShift shift : getPieceMoves()) {
             if (coordinates.canShift(shift)) {
                 Coordinates newCoordinates = coordinates.shift(shift);
-
                 if (isSquareAvailableForMove(newCoordinates, board)) {
                     result.add(newCoordinates);
                 }

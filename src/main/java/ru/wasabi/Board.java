@@ -1,6 +1,6 @@
 package ru.wasabi;
 
-import ru.wasabi.model.*;
+import ru.wasabi.pieces.*;
 
 import java.util.HashMap;
 
